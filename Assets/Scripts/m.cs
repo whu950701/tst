@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FirstPersonController : MonoBehaviour
+public class M : MonoBehaviour
 {
     public float mouseSensitivity = 100.0f; // 滑鼠靈敏度
     public Transform playerBody; // 玩家角色的 Transform
@@ -29,4 +29,3 @@ public class FirstPersonController : MonoBehaviour
         playerBody.Rotate(Vector3.up * mouseX);
     }
 }
-

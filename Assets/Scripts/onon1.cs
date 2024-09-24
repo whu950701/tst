@@ -1,10 +1,8 @@
-
-
 using UnityEngine;
 
 public class onon1 : MonoBehaviour
 {
-    public GameObject onTargetObject;  // 使用更规范的变量命名
+    public GameObject onTargetObject; // 使用更规范的变量命名
     public GameObject offTargetObject; // 使用更规范的变量命名
 
     private void Update()

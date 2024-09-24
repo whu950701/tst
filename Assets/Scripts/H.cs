@@ -1,49 +1,6 @@
-/*using UnityEngine;
-
-public class Draggable2: MonoBehaviour
-{
-    private bool isDragging = false;
-    private Vector3 offset;
-    private Vector3 initialPosition; // 保存物件的初始位置
-
-    public Camera cameraToUse; // 指定要使用的攝影機
-
-    private void Start()
-    {
-        // 保存物件的初始位置
-        initialPosition = transform.position;
-    }
-
-    private void OnMouseDown()
-    {
-        // 当鼠标按下时，记录物体与鼠标之间的偏移量
-        offset = gameObject.transform.position - GetMouseWorldPosition();
-        isDragging = true;
-    }
-
-
-
-    private void Update()
-    {
-        if (isDragging)
-        {
-            // 根据鼠标位置更新物体的位置
-            Vector3 newPosition = GetMouseWorldPosition() + offset;
-            transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
-        }
-    }
-
-    private Vector3 GetMouseWorldPosition()
-    {
-        // 获取鼠标在世界空间中的位置
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = -cameraToUse.transform.position.z; // 使用指定的攝影機
-        return cameraToUse.ScreenToWorldPoint(mousePosition);
-    }
-}*/
 using UnityEngine;
 
-public class FirstPersonPickUp : MonoBehaviour
+public class H : MonoBehaviour
 {
     public Camera playerCamera; // 玩家摄像机
     public float pickUpRange = 5.0f; // 可拾取范围
@@ -106,7 +63,7 @@ public class FirstPersonPickUp : MonoBehaviour
     {
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
         Vector3 targetPosition = ray.origin + ray.direction * holdDistance;
-        pickedObject.transform.position = Vector3.Lerp(pickedObject.transform.position, targetPosition - objectInitialOffset, Time.deltaTime * smoothFactor);
+        pickedObject.transform.position = Vector3.Lerp(pickedObject.transform.position,
+            targetPosition - objectInitialOffset, Time.deltaTime * smoothFactor);
     }
 }
-

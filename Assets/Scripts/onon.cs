@@ -4,6 +4,7 @@ public class onon : MonoBehaviour
 {
     public GameObject ontargetCamera; // 修改为 GameObject 类型
     public GameObject offtargetCamera; // 修改为 GameObject 类型
+
     private void OnMouseDown()
     {
         // 關閉指定的 GameObject
