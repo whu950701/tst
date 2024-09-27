@@ -466,6 +466,7 @@ GameObject:
   - component: {fileID: 779275213}
   - component: {fileID: 779275212}
   - component: {fileID: 779275218}
+  - component: {fileID: 779275219}
   m_Layer: 0
   m_Name: Cube
   m_TagString: InteractiveItem
@@ -600,6 +601,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTargetObject: {fileID: 1822655818}
   offTargetObject: {fileID: 1822655818}
+--- !u!114 &779275219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779275211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c198c7d49c9984595dc87b43c0491c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 300
 --- !u!1 &791850816
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +831,6 @@ MonoBehaviour:
   inspectPosition: {fileID: 1358495186}
   resizeScale: 0.2
   moveDuration: 0.2
-  rotationSpeed: 700
   mainCamera: {fileID: 963194227}
   playerMovementScript: {fileID: 802028414}
   playerAnimator: {fileID: 802028412}

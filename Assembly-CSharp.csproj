@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\H.cs" />
      <Compile Include="Assets\Scripts\m.cs" />
      <Compile Include="Assets\Scripts\onon1.cs" />
+     <Compile Include="Assets\Scripts\RotateItem.cs" />
      <Compile Include="Assets\Scripts\Touch image.cs" />
      <Compile Include="Assets\Scripts\WALK.cs" />
      <Compile Include="Assets\Scripts\ItemInteraction.cs" />
@@ -57,10 +58,10 @@
      <Folder Include="Assets\SampleScene_Profiles" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\Resources\Materials" />
      <Folder Include="Assets\Resources\Models\wait" />
      <Folder Include="Assets\Resources\Models" />
      <Folder Include="Assets\Scenes" />
-     <Folder Include="Assets\Resources\Materials" />
      <Folder Include="Assets\Resources\Prefabs" />
      <Folder Include="Assets\Resources\Models\jump" />
      <Folder Include="Assets\Resources\Models\walk" />

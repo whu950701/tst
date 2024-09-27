@@ -6,7 +6,6 @@ public class ItemInteraction : MonoBehaviour
     public Transform inspectPosition; // 物品检查位置
     public float resizeScale = 0.7f; // 缩小比例
     public float moveDuration = 1.0f; // 移动和缩小持续时间
-    public float rotationSpeed = 200.0f; // 旋转速度
     public Camera mainCamera; // 直接引用你的摄像机对象
     public MonoBehaviour playerMovementScript; // 玩家移动脚本引用
     public Animator playerAnimator; // 玩家动画控制器引用
@@ -24,12 +23,6 @@ public class ItemInteraction : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isInspecting)
         {
             PerformRaycast();
-        }
-
-        // 允许在检查模式中旋转物品
-        if (isInspecting && Input.GetMouseButton(2))
-        {
-            RotateItem();
         }
 
         // 按下Escape退出检查模式
@@ -86,6 +79,9 @@ public class ItemInteraction : MonoBehaviour
 
         currentItem.GetComponent<Rigidbody>().isKinematic = true;
         isInspecting = true;
+
+        // 启用旋转功能
+        currentItem.GetComponent<RotateItem>().enabled = true;
     }
 
     // 停止检查物品，恢复状态
@@ -101,6 +97,10 @@ public class ItemInteraction : MonoBehaviour
 
             // 恢复原始位置、旋转和缩放
             RestoreOriginalTransform();
+
+            // 禁用旋转功能
+            currentItem.GetComponent<RotateItem>().enabled = false;
+
             currentItem = null;
         }
 
@@ -170,17 +170,5 @@ public class ItemInteraction : MonoBehaviour
             playerAnimator.enabled = true; // 重新启用玩家动画
         }
     }
-
-    // 旋转物品
-    void RotateItem()
-    {
-        float horizontal = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-        float vertical = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
-
-        currentItem.transform.Rotate(Vector3.up, -horizontal, Space.World);
-        currentItem.transform.Rotate(Vector3.right, vertical, Space.World);
-    }
 }
-
-
 
